@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/taxi?serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">1111</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
+
+        <mapping class="a.vkube.model.Administrator"/>
+        <mapping class="a.vkube.model.Car"/>
+        <mapping class="a.vkube.model.DepartureLocation"/>
+        <mapping class="a.vkube.model.DestinationLocation"/>
+        <mapping class="a.vkube.model.Dispather"/>
+        <mapping class="a.vkube.model.Driver"/>
+        <mapping class="a.vkube.model.DriverLicense"/>
+        <mapping class="a.vkube.model.Order"/>
+        <mapping class="a.vkube.model.Passport"/>
+        <mapping class="a.vkube.model.Status"/>
+        <mapping class="a.vkube.model.Tariff"/>
+    </session-factory>
+</hibernate-configuration>

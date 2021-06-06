@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="721.0" prefWidth="978.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="a.vkube.controller.MainDispWindow">
+   <children>
+      <ImageView fitHeight="656.0" fitWidth="985.0" layoutX="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/taxi.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="fxTableOrder" layoutX="19.0" layoutY="396.0" prefHeight="260.0" prefWidth="942.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="396.0">
+        <columns>
+          <TableColumn fx:id="fxIdOrder" prefWidth="85.0" text="№ заказа" />
+          <TableColumn fx:id="fxDateOfReceipt" prefWidth="140.0" text="Дата и время вызова" />
+          <TableColumn fx:id="fxDateOfAppoint" prefWidth="152.0" text="Дата и время назначения" />
+          <TableColumn fx:id="fxPhone" prefWidth="105.0" text="Номер телефона" />
+          <TableColumn fx:id="fxDeparture" prefWidth="91.0" text="Откуда" />
+          <TableColumn fx:id="fxDestination" prefWidth="86.0" text="Куда" />
+          <TableColumn fx:id="fxStatus" prefWidth="93.0" text="Статус" />
+          <TableColumn fx:id="fxTariff" prefWidth="81.0" text="Тариф" />
+          <TableColumn fx:id="fxCost" prefWidth="104.0" text="Стоимость" />
+        </columns>
+      </TableView>
+      <Button layoutX="22.0" layoutY="669.0" mnemonicParsing="false" onAction="#actionEdit" prefHeight="43.0" prefWidth="480.0" text="Фиксировать заказ" textFill="#ff9d00" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="490.0" AnchorPane.topAnchor="670.0">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <TableView fx:id="fxTableDriver" layoutX="607.0" layoutY="67.0" prefHeight="279.0" prefWidth="351.0">
+        <columns>
+          <TableColumn fx:id="fxLastName" prefWidth="116.0" text="Фамилия" />
+          <TableColumn fx:id="fxFirstName" prefWidth="98.0" text="Имя" />
+            <TableColumn fx:id="fxStatusDriver" prefWidth="136.0" text="Статус" />
+        </columns>
+      </TableView>
+      <MenuBar layoutY="-4.0" prefHeight="30.0" prefWidth="982.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Закрыть" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Помощь">
+            <items>
+              <MenuItem mnemonicParsing="false" text="О программе" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="buttonNewOrders" layoutX="19.0" layoutY="31.0" mnemonicParsing="false" onAction="#newOrderAction" prefHeight="30.0" prefWidth="542.0" text="Новый заказ" textFill="#65da11">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <GridPane layoutX="20.0" layoutY="73.0" prefHeight="186.0" prefWidth="318.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="186.0" minWidth="10.0" prefWidth="171.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="150.0" minWidth="10.0" prefWidth="29.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="labelDateOfReceipt" disable="true" text="Дата и время вызова:" textFill="WHITE">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDateOfAppoint" disable="true" text="Дата и время назначения:" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelPhone" disable="true" text="Номер телефона:" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtDateOfReceipt" disable="true" prefHeight="22.0" prefWidth="143.0" GridPane.columnIndex="1" />
+            <TextField fx:id="txtDateOfAppoint" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtPhone" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label fx:id="labelStatus" disable="true" text="Статус:" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelTariff" disable="true" text="Тариф:" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelCost" disable="true" text="Стоимость:" textFill="WHITE" GridPane.rowIndex="5">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboStatus" disable="true" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="comboTariff" disable="true" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtCost" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="361.0" layoutY="73.0" prefHeight="118.0" prefWidth="200.0" AnchorPane.bottomAnchor="513.0" AnchorPane.leftAnchor="361.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="90.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="labelDepartureCity" disable="true" text="Город:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDepartureStreet" disable="true" text="Улица:" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDepartureHouse" disable="true" text="Дом:" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCityDeparture" disable="true" GridPane.columnIndex="1" />
+            <TextField fx:id="txtStreetDeparture" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtHouseDeparture" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="labelDepartureBuilding" disable="true" text="Корпус:" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDepartureEntrance" disable="true" text="Подъезд:" textFill="WHITE" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtBuildingDeparture" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtEntranceDeparture" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label fx:id="labelDepartureVillage" disable="true" text="Деревня:" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtVillageDeparture" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Label fx:id="labelDeparture" disable="true" layoutX="400.0" layoutY="66.0" prefHeight="18.0" prefWidth="132.0" text="Место отправления" textFill="WHITE" underline="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelDestination" disable="true" layoutX="409.0" layoutY="213.0" prefHeight="19.0" prefWidth="122.0" text="Место прибытия" textFill="WHITE" underline="true">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="361.0" layoutY="232.0" prefHeight="118.0" prefWidth="200.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="labelDestinationCity" disable="true" text="Город:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDestinationStreet" disable="true" text="Улица:" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDestinationHouse" disable="true" text="Дом:" textFill="WHITE" GridPane.rowIndex="3">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCityDestination" disable="true" GridPane.columnIndex="1" />
+            <TextField fx:id="txtStreetDestination" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtHouseDestination" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label fx:id="labelDestinationBuilding" disable="true" text="Корпус:" textFill="WHITE" GridPane.rowIndex="4">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelDestinationEntrance" disable="true" text="Подъезд:" textFill="WHITE" GridPane.rowIndex="5">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtBuildingDestination" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtEntranceDestination" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtVillageDestination" disable="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="labelDestinationVillage" disable="true" text="Деревня:" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Button fx:id="buttonNewOrder" disable="true" layoutX="173.0" layoutY="358.0" mnemonicParsing="false" onAction="#newOrderAction2" prefHeight="28.0" prefWidth="226.0" text="Зарегистрировать новый заказ!" textFill="#13c40a">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Label layoutX="707.0" layoutY="35.0" prefHeight="23.0" prefWidth="141.0" text="Водители смены" textFill="#02e83b" underline="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="buttonCancel" disable="true" layoutX="428.0" layoutY="357.0" mnemonicParsing="false" onAction="#cancelAction" prefHeight="28.0" prefWidth="132.0" text="Отмена" textFill="#fc6060">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="607.0" layoutY="357.0" mnemonicParsing="false" onAction="#editStatusAction" prefHeight="28.0" prefWidth="351.0" text="Изменить статус водителя" textFill="#fc9f00">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonExit" layoutX="511.0" layoutY="666.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="41.0" prefWidth="393.0" text="Завершить смену!" textFill="#d32929" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="510.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="670.0">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Button>
+      <GridPane layoutX="82.0" layoutY="277.0" prefHeight="73.0" prefWidth="200.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="134.0" minWidth="10.0" prefWidth="124.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.0" minWidth="10.0" prefWidth="76.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="labelIdDeparture" disable="true" text="ID отправления:" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="labelIdDestination" disable="true" text="ID прибытия:" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="comboIdDeparture" disable="true" prefWidth="150.0" GridPane.columnIndex="1" />
+            <ComboBox fx:id="comboIdDestination" disable="true" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="buttonNext" disable="true" layoutX="17.0" layoutY="359.0" mnemonicParsing="false" onAction="#nextAction" prefHeight="28.0" prefWidth="130.0" text="Далее">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
